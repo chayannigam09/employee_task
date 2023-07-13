@@ -1,0 +1,138 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+@layer base {
+  html {
+    font-family: Montserrat, system-ui, sans-serif;
+  }
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+:root {
+  --sky-blue: #E9F2FF;
+}
+
+.autofill-border input:-webkit-autofill,
+.autofill-border input:-webkit-autofill:hover,
+.autofill-border input:-webkit-autofill:focus,
+.autofill-border input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  -webkit-border-image: none !important;
+  --webkit-border: transparent !important
+}
+
+input:focus-visible,
+select:focus-visible {
+  border: 1px solid transparent !important;
+  outline: none !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: block;
+  background: url('./images/calendar.svg') no-repeat;
+  width: 20px;
+  height: 20px;
+  border-width: thin;
+  cursor: url('./images/cursor-pointer.svg'), auto;
+}
+
+.select-arrow {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 30px;
+  background-image: url('./images/down-arrow.svg') !important;
+  background-size: auto !important;
+  background-position: right 25px center !important;
+  background-repeat: no-repeat !important;
+}
+
+.ql-toolbar.ql-snow {
+  border-radius: 16px 16px 0 0 !important;
+  background: var(--sky-blue) !important;
+  border-color: var(--sky-blue) !important;
+  border-bottom-color: white !important;
+}
+
+.ql-container {
+  height: 250px !important;
+  margin-bottom: 8px !important;
+}
+
+.ql-container.ql-snow {
+  border-radius: 0 0 16px 16px !important;
+  background: var(--sky-blue) !important;
+  border-color: var(--sky-blue) !important;
+}
+
+.ql-toolbar.ql-snow .ql-formats {
+  margin-right: 31px !important;
+}
+
+/* Emplloyee List Code */
+.custom-cursor {
+  cursor: url('./images/cursor-pointer.svg'), auto;
+}
+
+.avatar-group {
+  display: flex;
+}
+
+.avatar {
+  width: 32px; /* Adjust the size as needed */
+  height: 32px; /* Adjust the size as needed */
+  background-color: navy;
+  border: 3px solid white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.avatar-1 {
+  z-index: 3;
+}
+
+.avatar-2 {
+  z-index: 2;
+  margin-left: -24px;
+}
+
+.avatar-3 {
+  z-index: 1;
+  margin-left: -23px;
+}
+
+.avatar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-right: 20px solid transparent; 
+}
+
+.avatar span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+}
