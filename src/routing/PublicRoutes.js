@@ -10,7 +10,7 @@ function PublicRoutes() {
       <Route path="/" element={<EmployeeForm />} />
       <Route path="/emp/list" element={<EmployeeList />} />
       <Route path="/edit-emp/:id" element={<EmployeeForm />} />
-      <Route path="/emp/drop" element={<EmployeeDropdown />} />
+      <Route path="/emp/drop/:id" element={<EmployeeDropdown />} />
     </Routes>
   );
 }

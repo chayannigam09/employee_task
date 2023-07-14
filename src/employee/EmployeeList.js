@@ -83,7 +83,7 @@ export default function EmployeeList() {
                                                                                 >
                                                                                     <img src={eye} alt="view-icon" className="w-3 h-3" />
                                                                                     <span className="ml-2 capitalize text-grey-05 opacity-60">
-                                                                                        View
+                                                                                    <Link to={`/emp/drop/${res.id}`} className="">View</Link>
                                                                                     </span>
                                                                                 </li>
                                                                                 <li className="w-full inline-flex items-center py-2 px-12 text-sm font-medium border border-grey-04" >
