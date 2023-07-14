@@ -57,7 +57,7 @@ export default function EmployeeList() {
                                         data.map((res, i) => {
                                             return (
                                                 <tr key={i} className="p-4 h-[100px]">
-                                                    <td className="px-5 py-5 border-b border-grey-02 bg-white text-13 text-grey-03 text-center font-medium capitalize">{res.FirstName}</td>
+                                                    <td className="px-5 py-5 border-b border-grey-02 bg-white text-13 text-grey-03 text-center font-medium capitalize">{res.FirstName+' '+res.LastName}</td>
                                                     <td className="px-5 py-5 border-b border-grey-02 bg-white text-13 text-grey-03 text-center font-medium">{res.DOB}</td>
                                                     <td className="px-5 py-5 border-b border-grey-02 bg-white text-13 text-grey-03 text-center font-medium">{res.StartDate}</td>
                                                     <td className="px-5 py-5 border-b border-grey-02 bg-white text-13 text-grey-03 text-center font-medium">{res.EndDate}</td>

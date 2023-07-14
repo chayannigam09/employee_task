@@ -15,7 +15,7 @@ export default function EmployeeForm() {
     const [current_salary, setcurrent_salary] = useState("");
     const [discription, setdiscription] = useState("");
     const [registrationDone, setRegistrationDone] = useState(false);
-
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
         if(id){
             getEmp().then((res) => {
@@ -69,6 +69,7 @@ export default function EmployeeForm() {
         if(id){
             updateEmp(id,userdata).then((res) => {
                 setRegistrationDone(true)
+                setLoading(true)
                 setTimeout(() => {
                     navigate('/emp/list');
                 }, 3000);
@@ -79,6 +80,7 @@ export default function EmployeeForm() {
         }else{
             registerEmp(userdata).then((res) => {
                 setRegistrationDone(true)
+                setLoading(true)
                 setTimeout(() => {
                     navigate('/emp/list');
                 }, 3000);
@@ -164,7 +166,13 @@ export default function EmployeeForm() {
                             <div className="md:w-full px-3">
                                 <button type="submit"
                                     className="items-center w-full bg-white mt-5 h-[69px] py-2 border border-mild-blue rounded-13 text-mild-blue font-bold mb-2 text-18 custom-cursor">
-                                    Save
+                                    {!loading && <span className='indicator-label font-roboto-bold'>Save</span>}
+                                    {loading && (
+                                        <span className='indicator-progress' style={{ display: 'block' }}>
+                                            Saving...
+                                            <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
+                                        </span>
+                                    )}
                                 </button>
                             </div>
                         </div>
